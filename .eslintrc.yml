@@ -31,9 +31,20 @@ rules:
   functional/immutable-data: 0
   functional/functional-parameters: 0
   functional/no-try-statement: 0
+  no-restricted-imports: "off"
   functional/no-throw-statement: 0
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
   react/function-component-definition:
     [2, { "namedComponents": "arrow-function" }]
   testing-library/no-debug: 0
-  react/jsx-filename-extension: [1, { "extensions": [".js", ".jsx", ".tsx"] }]
+  react/jsx-filename-extension:
+    [1, { "extensions": [".js", ".jsx", ".tsx", ".ts"] }]
+  "@typescript-eslint/no-restricted-imports":
+    [
+      "warn",
+      {
+        "name": "react-redux",
+        "importNames": ["useSelector", "useDispatch"],
+        "message": "Use typed hooks `useAppDispatch` and `useAppSelector` instead.",
+      },
+    ]

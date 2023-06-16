@@ -3,9 +3,9 @@ import Grid from '@mui/system/Unstable_Grid'
 import Box from '@mui/system/Box'
 
 interface propsType {
-  id: number
-  name: string
-  image: string
+  readonly id: number
+  readonly name: string
+  readonly image: string
 }
 
 const CatalogItem = (props: propsType): JSX.Element => {

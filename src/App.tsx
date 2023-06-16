@@ -6,7 +6,7 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { I18nextProvider } from 'react-i18next'
 import { Container } from '@mui/system'
-import store from './store'
+import storeTemplate from './storeTemplate'
 import Catalog from './components/catalogPage/Catalog'
 import Main from './components/mainPage/Main'
 import Nav from './components/Nav'
@@ -46,7 +46,7 @@ const App = (): JSX.Element => (
     <Container
       fixed
       sx={{
-        bgcolor: 'black'
+        bgcolor: 'gray'
       }}
     >
       <BrowserRouter>
@@ -56,8 +56,8 @@ const App = (): JSX.Element => (
           </div> */}
         <Nav />
         <Routes>
-          <Route path="/" element={<Main store={store} />} />
-          <Route path="catalog" element={<Catalog store={store} />} />
+          <Route path="/" element={<Main store={storeTemplate} />} />
+          <Route path="catalog" element={<Catalog store={storeTemplate} />} />
         </Routes>
       </BrowserRouter>
     </Container>
