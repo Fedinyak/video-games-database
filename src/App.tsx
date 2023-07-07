@@ -1,16 +1,16 @@
-import React, {
-//  useEffect, useState
-} from 'react'
+import React from //  useEffect, useState
+  'react'
 import './App.css'
 // import axios from 'axios'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { I18nextProvider } from 'react-i18next'
 import { Container } from '@mui/system'
-import storeTemplate from './storeTemplate'
+import storeTemplate from './components/testTemp/storeTemplate'
 import Catalog from './components/catalogPage/Catalog'
 import Main from './components/mainPage/Main'
-import Nav from './components/Nav'
+import Header from './components/header/Header'
 import i18n from './locales/i18next'
+import GamePage from './components/gamePage/GamePage'
 // import Grid from '@mui/system/Unstable_Grid';
 // import Box from '@mui/system/Box';
 // import CatalogItem from './components/catalog/CatalogItem';
@@ -42,26 +42,21 @@ import i18n from './locales/i18next'
 
 const App = (): JSX.Element => (
   <I18nextProvider i18n={i18n}>
-
     <Container
-      fixed
+      // fixed
       sx={{
         bgcolor: 'gray'
       }}
     >
       <BrowserRouter>
-        {/* <div className="App">
-            <Catalog store={store} />
-
-          </div> */}
-        <Nav />
+        <Header />
         <Routes>
           <Route path="/" element={<Main store={storeTemplate} />} />
-          <Route path="catalog" element={<Catalog store={storeTemplate} />} />
+          <Route path="catalog" element={<Catalog />} />
+          <Route path="catalog/:id" element={<GamePage />} />
         </Routes>
       </BrowserRouter>
     </Container>
-
   </I18nextProvider>
 )
 export default App

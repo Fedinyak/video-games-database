@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from '@mui/system/Unstable_Grid'
 import Box from '@mui/system/Box'
+import { Link } from 'react-router-dom'
 
 interface propsType {
   readonly id: number
@@ -35,6 +36,7 @@ const CatalogItem = (props: propsType): JSX.Element => {
           src={image}
         />
         <br />
+        <Link to={`${id}`}>{name}</Link>
         <Box
           component="h3"
           sx={{
