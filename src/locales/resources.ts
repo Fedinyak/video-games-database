@@ -3,7 +3,11 @@ export default {
     translation: {
       nav: {
         main: 'Главная',
-        catalog: 'Каталог игр'
+        catalog: 'Каталог игр',
+        searchBar: {
+          label: 'Поиск',
+          submitButton: 'Найти'
+        }
       },
       filter: {
         label: 'Сортировка по',
@@ -14,6 +18,15 @@ export default {
         ratingDecrease: 'Рейтингу ↓',
         releasedIncrease: 'Дате выхода ↑',
         releasedDecrease: 'Дате выхода ↓'
+      },
+      catalogPage: {
+        title: 'Каталог'
+      },
+      searchPage: {
+        title: 'Поиск'
+      },
+      mainPage: {
+        title: 'Главная'
       }
     }
   },
@@ -21,7 +34,11 @@ export default {
     translation: {
       nav: {
         main: 'Main page',
-        catalog: 'Catalog'
+        catalog: 'Catalog',
+        searchBar: {
+          label: 'Search game',
+          submitButton: 'Search'
+        }
       },
       filter: {
         label: 'Order by',
@@ -32,6 +49,15 @@ export default {
         ratingDecrease: 'Rating ↓',
         releasedIncrease: 'Released ↑',
         releasedDecrease: 'Released  ↓'
+      },
+      catalogPage: {
+        title: 'Catalog'
+      },
+      searchPage: {
+        title: 'Search'
+      },
+      mainPage: {
+        title: 'Main page'
       }
     }
   }

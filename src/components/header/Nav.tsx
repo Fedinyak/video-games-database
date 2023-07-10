@@ -2,17 +2,13 @@
 import Box from '@mui/system/Box'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import LanguageSwitchBtn from './LanguageSwitchBtn'
 // import i18next from 'i18next'
 
 const Nav = (): JSX.Element => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   // eslint-disable-next-line max-len
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type, functional/no-return-void
-  const handleLangSwitch = (e: any) => {
-    const { lang } = e.target.dataset
-    // eslint-disable-next-line functional/no-expression-statements
-    i18n.changeLanguage(lang)
-  }
   return (
     <Box
       sx={{
@@ -30,22 +26,7 @@ const Nav = (): JSX.Element => {
           </li>
         </ul>
       </nav>
-      <button
-        type="button"
-        className="btn btn-primary"
-        data-lang="en"
-        onClick={handleLangSwitch}
-      >
-        {t('languages.en')}
-      </button>
-      <button
-        type="button"
-        className="btn btn-primary"
-        data-lang="ru"
-        onClick={handleLangSwitch}
-      >
-        {t('languages.ru')}
-      </button>
+      <LanguageSwitchBtn />
     </Box>
   )
 }

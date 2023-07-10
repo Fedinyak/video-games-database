@@ -56,7 +56,14 @@ const CatalogPagination = (): JSX.Element => {
 
   return (
     <Stack spacing={2}>
-      <Pagination count={paginationCount} page={page} variant="outlined" shape="rounded" onChange={handleChange} />
+      <Pagination
+        count={paginationCount}
+        page={page}
+        boundaryCount={2}
+        variant="outlined"
+        shape="rounded"
+        onChange={handleChange}
+      />
     </Stack>
   )
 }

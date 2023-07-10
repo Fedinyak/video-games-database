@@ -11,6 +11,7 @@ import Main from './components/mainPage/Main'
 import Header from './components/header/Header'
 import i18n from './locales/i18next'
 import GamePage from './components/gamePage/GamePage'
+import SearchPage from './components/searchPage/SearchPage'
 // import Grid from '@mui/system/Unstable_Grid';
 // import Box from '@mui/system/Box';
 // import CatalogItem from './components/catalog/CatalogItem';
@@ -54,6 +55,7 @@ const App = (): JSX.Element => (
           <Route path="/" element={<Main store={storeTemplate} />} />
           <Route path="catalog" element={<Catalog />} />
           <Route path="catalog/:id" element={<GamePage />} />
+          <Route path="search" element={<SearchPage />} />
         </Routes>
       </BrowserRouter>
     </Container>

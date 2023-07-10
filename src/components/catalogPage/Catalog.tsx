@@ -6,11 +6,12 @@ import React, { useEffect } from 'react'
 
 import Grid from '@mui/system/Unstable_Grid'
 import axios from 'axios'
+import { useTranslation } from 'react-i18next'
 import CatalogItem from './CatalogItem'
 // import { type GameListType } from '../../propsType/gameListType'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import { addGames, addGamesCount } from '../../slices/gamesSlice'
-import CatalogPagination from './Pagination'
+import Pagination from '../ui/Pagination'
 import FilterBar from './FilterBar'
 import Preloader from '../ui/Preloader'
 import { fetching } from '../../slices/uiSlice'
@@ -25,6 +26,7 @@ import { addActiveGame } from '../../slices/activeGameSlice'
 // eslint-disable-next-line max-len
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type, functional/prefer-immutable-types
 const Catalog = () => {
+  const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const gamesStore = useAppSelector((state) => state.games.items)
   const pageSize = useAppSelector((state) => state.games.pageSize)
@@ -183,7 +185,7 @@ const Catalog = () => {
 
   return (
     <>
-      <h1>Catalog</h1>
+      <h1>{t('catalogPage.title')}</h1>
       <FilterBar />
       {isFetching ? <Preloader />
         : (
@@ -200,7 +202,7 @@ const Catalog = () => {
             {/* {console.log(gamesStore)} */}
           </Grid>
           )}
-      <CatalogPagination />
+      <Pagination />
     </>
   )
 }
