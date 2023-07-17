@@ -30,6 +30,17 @@ export default {
       catalogPage: {
         title: 'Каталог'
       },
+      gamePage: {
+        screenshots: 'Скриншеты',
+        rating: 'Рейтинг',
+        released: 'Релиз',
+        website: 'Сайт',
+        playtime: 'Игровое время',
+        platforms: 'Платформы',
+        genres: 'Жанр',
+        publishers: 'Издатель',
+        about: 'Описание игры'
+      },
       searchPage: {
         title: 'Поиск'
       },
@@ -68,6 +79,17 @@ export default {
       },
       catalogPage: {
         title: 'Catalog'
+      },
+      gamePage: {
+        screenshots: 'Screenshots',
+        rating: 'Rating',
+        released: 'Released',
+        website: 'Website',
+        playtime: 'Playtime',
+        platforms: 'Platforms',
+        genres: 'Genres',
+        publishers: 'Publishers',
+        about: 'About'
       },
       searchPage: {
         title: 'Search'

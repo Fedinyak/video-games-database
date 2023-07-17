@@ -9,6 +9,8 @@ const apiPath = 'https://api.rawg.io/api'
 
 const routes = {
   searchGameApiPath: (searchWord: string): string => `${apiPath}/games${key}&search=${searchWord}`,
+  detailsOfGameApiPath: (gameId: string): string => `${apiPath}/games/${gameId}${key}`,
+  screenshotsOfGameApiPath: (gameId: string): string => `${apiPath}/games/${gameId}/screenshots${key}`,
   genresApiPath: (): string => `${apiPath}/genres${key}`,
   platformsApiPath: (): string => `${apiPath}/platforms${key}`,
   publishersApiPath: (): string => `${apiPath}/publishers${key}`,

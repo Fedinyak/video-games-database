@@ -21,10 +21,13 @@ import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Container } from '@mui/system'
 import { Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import { addActiveGame, addScreenshots } from '../../slices/activeGameSlice'
 import { fetching } from '../../slices/uiSlice'
 import Preloader from '../ui/Preloader'
+import routesPath from '../../routesPath'
+// import EntitiesList from './EntitiesList'
 // eslint-disable-next-line max-len
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type, functional/prefer-immutable-types
 
@@ -32,6 +35,7 @@ const GamePage = (): JSX.Element => {
   // const { topicId } = useParams()
   // const { url } = useRouteMatch()
   const location = useLocation()
+  const { t } = useTranslation()
   const [, , gameId] = location.pathname.split('/')
   // console.log(topicId, 'topicId')
   // console.log(url, 'url')
@@ -45,12 +49,14 @@ const GamePage = (): JSX.Element => {
   useEffect(() => {
     const requestData = async () => {
       dispatch(fetching(true))
-      const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
+      // const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
       const responseActiveGame = await axios.get(
-        `https://api.rawg.io/api/games/${gameId}?key=${key}`
+        routesPath.detailsOfGameApiPath(gameId)
+        // `https://api.rawg.io/api/games/${gameId}?key=${key}`
       )
       const responseScreenshots = await axios.get(
-        `https://api.rawg.io/api/games/${gameId}/screenshots?key=${key}`
+        routesPath.screenshotsOfGameApiPath(gameId)
+        // `https://api.rawg.io/api/games/${gameId}/screenshots?key=${key}`
       )
 
       // const responseActiveGame = {
@@ -84,8 +90,15 @@ const GamePage = (): JSX.Element => {
           id: responseActiveGame.data.id,
           name: responseActiveGame.data.name,
           image: responseActiveGame.data.background_image,
-          description: responseActiveGame.data.description_raw
-          // screenshots: responseActiveGame.data.short_screenshots
+          description: responseActiveGame.data.description_raw,
+          metacritic: responseActiveGame.data.metacritic,
+          released: responseActiveGame.data.released,
+          website: responseActiveGame.data.website,
+          rating: responseActiveGame.data.rating,
+          playtime: responseActiveGame.data.playtime,
+          platforms: responseActiveGame.data.platforms,
+          genres: responseActiveGame.data.genres,
+          publishers: responseActiveGame.data.publishers
         })
       )
       dispatch(addScreenshots(responseScreenshots.data.results))
@@ -125,36 +138,62 @@ const GamePage = (): JSX.Element => {
               // bgcolor: '#474747',
               overflow: 'hidden',
               // borderRadius: '12px',
-              boxShadow: 1,
-              fontWeight: 'bold'
+              boxShadow: 1
             }}
           >
-
             <Box
-              component="img"
               sx={{
-                objectFit: 'cover',
-                height: 'auto',
-                width: '100%'
+                position: 'relative'
+                // fontWeight: 'bold'
               }}
-              alt={name}
-              src={image}
-            />
-            <Container>
+            >
               <Box
-                component="h3"
+                component="img"
                 sx={{
-                  textTransform: 'capitalize',
-                  color: 'white',
-                  fontSize: 40
+                  objectFit: 'cover',
+                  height: 'auto',
+                  width: '100%'
+                }}
+                alt={name}
+                src={image}
+              />
+              <Box
+                component="div"
+                sx={{
+                  // height: '10%',
+                  width: '100%',
+                  backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                  position: 'absolute',
+                  bottom: '0'
                 }}
               >
-                {name}
+                <Container>
+                  <Typography
+                    component="h1"
+                    mt={2}
+                    mb={3}
+                    sx={{
+                      textTransform: 'capitalize',
+                      color: 'white',
+                      fontSize: { xs: '2rem', sm: '3rem', md: '4rem' },
+                      lineHeight: { xs: '2.2rem', sm: '3.3rem', md: '4.4rem' },
+                      fontWeight: 'bolder'
+                    }}
+                  >
+                    {name}
+                  </Typography>
+                </Container>
               </Box>
-              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            </Box>
+            <Container>
+              <Grid
+                container
+                rowSpacing={1}
+                columnSpacing={{ xs: 2, sm: 4, md: 6 }}
+              >
                 <Grid xs={12} sm={8} md={6}>
                   <Typography
-                // component="h1"
+                    // component="h1"
                     variant="body1"
                     sx={{
                       color: 'white'
@@ -166,10 +205,50 @@ const GamePage = (): JSX.Element => {
                     {description}
                   </Typography>
                 </Grid>
+                <Grid xs={6} sm={4} md={6}>
+                  <Typography
+                    component="h4"
+                    sx={{
+                      color: 'white',
+                      fontWeight: 'bolder'
+                    }}
+                  >
+                    {t('gamePage.platforms')}
+                  </Typography>
+                  {gameStore?.platforms.map((item) => (
+                    <Typography
+                      key={item.platform.id}
+                      variant="body1"
+                      sx={{
+                        color: 'white'
+                      }}
+                    >
+                      {item.platform.name}
+                    </Typography>
+                  ))}
+                </Grid>
+                <Grid xs={6} sm={4} md={6}>
+                  {/* <EntitiesList
+                    entitiesList={gameStore?.genres}
+                    title={t('gamePage.genres')}
+                  /> */}
+                </Grid>
               </Grid>
             </Container>
           </Box>
           <Container>
+            <Typography
+              component="h4"
+              // variant="body1"
+              sx={{
+                color: 'white',
+                fontWeight: 'bolder'
+                // fontSize: 40,
+                // position: 'relative'
+              }}
+            >
+              {t('gamePage.screenshots')}
+            </Typography>
             <Carousel showArrows showThumbs>
               {screenshots?.map((screenshot) => (
                 <div key={screenshot.id}>

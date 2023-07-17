@@ -60,19 +60,29 @@ const Search = () => {
       // eslint-disable-next-line functional/no-conditional-statements
       const requestData = async () => {
         dispatch(fetching(true))
-        const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
+        // const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
         const responseActiveGame = await axios.get(
-          `https://api.rawg.io/api/games/${getSearchGameId.id}?key=${key}`
+          // `https://api.rawg.io/api/games/${getSearchGameId.id}?key=${key}`
+          routesPath.detailsOfGameApiPath(`${getSearchGameId.id}`)
         )
         const responseScreenshots = await axios.get(
-          `https://api.rawg.io/api/games/${getSearchGameId.id}/screenshots?key=${key}`
+          // `https://api.rawg.io/api/games/${getSearchGameId.id}/screenshots?key=${key}`
+          routesPath.screenshotsOfGameApiPath(`${getSearchGameId.id}`)
         )
         dispatch(
           addActiveGame({
             id: responseActiveGame.data.id,
             name: responseActiveGame.data.name,
             image: responseActiveGame.data.background_image,
-            description: responseActiveGame.data.description_raw
+            description: responseActiveGame.data.description_raw,
+            metacritic: responseActiveGame.data.metacritic,
+            released: responseActiveGame.data.released,
+            website: responseActiveGame.data.website,
+            rating: responseActiveGame.data.rating,
+            playtime: responseActiveGame.data.playtime,
+            platforms: responseActiveGame.data.platforms,
+            genres: responseActiveGame.data.genres,
+            publishers: responseActiveGame.data.publishers
           })
         )
         dispatch(addScreenshots(responseScreenshots.data.results))
