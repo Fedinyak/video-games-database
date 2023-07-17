@@ -9,15 +9,23 @@ export default {
           submitButton: 'Найти'
         }
       },
-      filter: {
-        label: 'Сортировка по',
-        popularity: 'Популярности',
-        nameIncrease: 'Названию ↑',
-        nameDecrease: 'Названию ↓',
-        ratingIncrease: 'Рейтингу ↑',
-        ratingDecrease: 'Рейтингу ↓',
-        releasedIncrease: 'Дате выхода ↑',
-        releasedDecrease: 'Дате выхода ↓'
+      filterMenu: {
+        menu: 'Фильтры',
+        orderBy: {
+          label: 'Сортировка по',
+          popularity: 'Популярности',
+          nameIncrease: 'Названию ↑',
+          nameDecrease: 'Названию ↓',
+          ratingIncrease: 'Рейтингу ↑',
+          ratingDecrease: 'Рейтингу ↓',
+          releasedIncrease: 'Дате выхода ↑',
+          releasedDecrease: 'Дате выхода ↓'
+        },
+        filterBy: {
+          platforms: 'Платформа',
+          publishers: 'Издатель',
+          genres: 'Жанр'
+        }
       },
       catalogPage: {
         title: 'Каталог'
@@ -40,15 +48,23 @@ export default {
           submitButton: 'Search'
         }
       },
-      filter: {
-        label: 'Order by',
-        popularity: 'Popularity',
-        nameIncrease: 'Name ↑',
-        nameDecrease: 'Name  ↓',
-        ratingIncrease: 'Rating ↑',
-        ratingDecrease: 'Rating ↓',
-        releasedIncrease: 'Released ↑',
-        releasedDecrease: 'Released  ↓'
+      filterMenu: {
+        menu: 'Filter options',
+        orderBy: {
+          label: 'Order by',
+          popularity: 'Popularity',
+          nameIncrease: 'Name ↑',
+          nameDecrease: 'Name  ↓',
+          ratingIncrease: 'Rating ↑',
+          ratingDecrease: 'Rating ↓',
+          releasedIncrease: 'Released ↑',
+          releasedDecrease: 'Released  ↓'
+        },
+        filterBy: {
+          platforms: 'Platforms',
+          publishers: 'Publishers',
+          genres: 'Genres'
+        }
       },
       catalogPage: {
         title: 'Catalog'

@@ -55,14 +55,17 @@ const CatalogPagination = (): JSX.Element => {
   }
 
   return (
-    <Stack spacing={2}>
+    <Stack spacing={2} mt={3} mb={6} sx={{ alignItems: 'center' }}>
       <Pagination
         count={paginationCount}
         page={page}
-        boundaryCount={2}
+        siblingCount={1}
+        boundaryCount={1}
         variant="outlined"
         shape="rounded"
         onChange={handleChange}
+        size="small"
+        // sx={{ width: '100%' }}
       />
     </Stack>
   )

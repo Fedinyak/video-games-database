@@ -18,6 +18,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import { addSearchGames, addSearchWord } from '../../slices/searchSlice'
 import { fetching } from '../../slices/uiSlice'
 import { addActiveGame, addScreenshots } from '../../slices/activeGameSlice'
+import routesPath from '../../routesPath'
 
 const Search = () => {
   const { t } = useTranslation()
@@ -29,9 +30,10 @@ const Search = () => {
 
   useEffect(() => {
     const requestData = async () => {
-      const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
+      // const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
       const response = await axios.get(
-          `https://api.rawg.io/api/games?key=${key}&search=${searchWord}`
+        routesPath.searchGameApiPath(searchWord)
+        // `https://api.rawg.io/api/games?key=${key}&search=${searchWord}`
       )
       dispatch(addSearchGames(response.data.results))
     }
@@ -53,7 +55,7 @@ const Search = () => {
     console.log(getSearchGameId === undefined, 'getSearchGameId------')
     if (getSearchGameId === undefined) {
       // alert('---undefined')
-      navigate('search')
+      navigate(routesPath.searchPagePath())
     } else {
       // eslint-disable-next-line functional/no-conditional-statements
       const requestData = async () => {
@@ -80,16 +82,21 @@ const Search = () => {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       requestData()
 
-      navigate(`catalog/${getSearchGameId.id}`)
+      navigate(`${routesPath.catalogPagePath()}/${getSearchGameId.id}`)
       dispatch(addSearchWord(''))
       setInputValue('')
     }
   }
 
   return (
-    <Stack spacing={2} sx={{ width: 600 }}>
-      <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
+      <Stack spacing={1} mb={2} direction="row" justifyContent="space-between">
         <Autocomplete
+          sx={{
+            width: '100%'
+            // backgroundColor: 'green',
+            // color: 'green'
+          }}
           freeSolo
           id="free-solo-2-demo"
           disableClearable
@@ -99,6 +106,20 @@ const Search = () => {
           options={searchGamesStore.map((item) => item.name)}
           value={inputValue}
           // onClick={handleSubmit}
+          // renderOption={(props, option) => (
+          //   <span
+          //     {...props}
+          //     style={{
+          //       backgroundColor: {
+          //         '&:hover': {
+          //           backgroundColor: 'pink !important'
+          //         }
+          //       }
+          //     }}
+          //   >
+          //     {option}
+          //   </span>
+          // )}
           renderInput={(params) => (
             <TextField
               {...params}
@@ -116,9 +137,15 @@ const Search = () => {
           )}
         />
         {/* <input type="submit" value={t('nav.searchBar.submitButton')} /> */}
-        <Button type="submit" variant="contained">{t('nav.searchBar.submitButton')}</Button>
-      </form>
-    </Stack>
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{ width: 120, backgroundColor: '#797979' }}
+        >
+          {t('nav.searchBar.submitButton')}
+        </Button>
+      </Stack>
+    </form>
   )
 }
 export default Search

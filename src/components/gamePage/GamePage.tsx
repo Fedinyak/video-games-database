@@ -19,6 +19,8 @@ import axios from 'axios'
 // import { addGames } from '../../slices/gamesSlice'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import { Container } from '@mui/system'
+import { Typography } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import { addActiveGame, addScreenshots } from '../../slices/activeGameSlice'
 import { fetching } from '../../slices/uiSlice'
@@ -99,7 +101,9 @@ const GamePage = (): JSX.Element => {
 
   const name = gameStore?.name
   const image = gameStore?.image
+  // const id = gameStore?.id
   const description = gameStore?.description
+  // const screenshots = [{ name, id, image }, ...screenshotsStore]
   const screenshots = screenshotsStore
   const isFetching = useAppSelector((state) => state.uiState.isFetching)
   console.log(screenshots, 'screenshots--------------')
@@ -108,27 +112,24 @@ const GamePage = (): JSX.Element => {
       {isFetching ? (
         <Preloader />
       ) : (
-        <Grid xs={12}>
-          <p>{location.pathname.split('/')}</p>
-          <Carousel showArrows showThumbs>
-            {screenshots?.map((screenshot) => (
-              <div key={screenshot.id}>
-                <img alt={name} src={screenshot.image} />
-              </div>
-            ))}
-          </Carousel>
+        // <Grid xs={12}>
+        <>
+          {/* <p>{location.pathname.split('/')}</p> */}
+
           <Box
+            mb={2}
             sx={{
               display: 'flex',
               flexDirection: { xs: 'column' },
               // alignItems: 'center',
-              bgcolor: '#474747',
+              // bgcolor: '#474747',
               overflow: 'hidden',
-              borderRadius: '12px',
+              // borderRadius: '12px',
               boxShadow: 1,
               fontWeight: 'bold'
             }}
           >
+
             <Box
               component="img"
               sx={{
@@ -139,20 +140,46 @@ const GamePage = (): JSX.Element => {
               alt={name}
               src={image}
             />
-            <br />
-            <Box
-              component="h3"
-              sx={{
-                textTransform: 'capitalize',
-                color: 'white',
-                fontSize: 40
-              }}
-            >
-              {name}
-            </Box>
-            <p>{description}</p>
+            <Container>
+              <Box
+                component="h3"
+                sx={{
+                  textTransform: 'capitalize',
+                  color: 'white',
+                  fontSize: 40
+                }}
+              >
+                {name}
+              </Box>
+              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                <Grid xs={12} sm={8} md={6}>
+                  <Typography
+                // component="h1"
+                    variant="body1"
+                    sx={{
+                      color: 'white'
+                      // fontWeight: 'bolder',
+                      // fontSize: 40,
+                      // position: 'relative'
+                    }}
+                  >
+                    {description}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Container>
           </Box>
-        </Grid>
+          <Container>
+            <Carousel showArrows showThumbs>
+              {screenshots?.map((screenshot) => (
+                <div key={screenshot.id}>
+                  <img alt={name} src={screenshot.image} />
+                </div>
+              ))}
+            </Carousel>
+          </Container>
+          {/* </Grid> */}
+        </>
       )}
     </div>
   )

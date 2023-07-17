@@ -31,12 +31,18 @@ const LanguageSwitchBtn = (): JSX.Element => {
       <ToggleButtonGroup
         color="primary"
         value={getLang}
+        // size={{ xs: 'small', sm: 'medium' }}
+        size="small"
         exclusive
         onChange={handleChange}
         aria-label="Platform"
       >
         <ToggleButton value="en">En</ToggleButton>
-        <ToggleButton value="ru">Ру</ToggleButton>
+        <ToggleButton
+          value="ru"
+        >
+          Ру
+        </ToggleButton>
       </ToggleButtonGroup>
       {/* <button
         type="button"

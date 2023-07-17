@@ -18,34 +18,41 @@ const CatalogItem = (props: propsType): JSX.Element => {
           display: 'flex',
           flexDirection: { xs: 'column' },
           // alignItems: 'center',
-          bgcolor: '#474747',
+          // bgcolor: '#474747',
           overflow: 'hidden',
-          borderRadius: '12px',
+          borderRadius: '6px',
           boxShadow: 1,
-          fontWeight: 'bold'
+          fontWeight: 'bold',
+          position: 'relative'
         }}
       >
-        <Box
-          component="img"
-          sx={{
-            objectFit: 'cover',
-            height: 200,
-            width: '100%'
-          }}
-          alt={name}
-          src={image}
-        />
-        <br />
-        <Link to={`${id}`}>{name}</Link>
-        <Box
-          component="h3"
-          sx={{
-            textTransform: 'capitalize',
-            color: 'white'
-          }}
-        >
-          {name}
-        </Box>
+        <Link to={`${id}`} style={{ textDecoration: 'none', color: 'white' }}>
+          <Box
+            component="img"
+            sx={{
+              objectFit: 'cover',
+              height: 200,
+              width: '100%'
+            }}
+            alt={name}
+            src={image}
+          />
+          <Box
+            component="div"
+            sx={{
+              // height: '10%',
+              width: '100%',
+              backgroundColor: 'rgba(0, 0, 0, 0.4)',
+              position: 'absolute',
+              bottom: '0'
+            }}
+          >
+
+            <Box component="h3" pl={1}>
+              {name}
+            </Box>
+          </Box>
+        </Link>
       </Box>
     </Grid>
   )

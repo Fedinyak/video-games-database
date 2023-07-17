@@ -10,10 +10,10 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { type SelectChangeEvent } from '@mui/material/Select'
 import { useTranslation } from 'react-i18next'
-import { addOrder } from '../../slices/gamesSlice'
-import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
+import { addOrder } from '../../../slices/gamesSlice'
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks'
 
-const getFilterType = (value: string): string => {
+const convertFilterType = (value: string): string => {
   switch (value) {
     case 'name':
       return 'name'
@@ -34,7 +34,7 @@ const getFilterType = (value: string): string => {
   }
 }
 
-const getFilterValue = (value: string): string => {
+const convertFilterValue = (value: string): string => {
   switch (value) {
     case '-name':
       return 'nameDec'
@@ -49,37 +49,49 @@ const getFilterValue = (value: string): string => {
   }
 }
 
-const FilterBar = (): JSX.Element => {
+const OrderSelect = (): JSX.Element => {
   const { t } = useTranslation()
 
   const handleChange = (event: SelectChangeEvent) => {
-    dispatch(addOrder(getFilterType(event.target.value)))
+    dispatch(addOrder(convertFilterType(event.target.value)))
   }
 
   const dispatch = useAppDispatch()
   const gameFilter = useAppSelector((state) => state.games.order)
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{
+      minWidth: '22%',
+      mb: 1
+    }}
+    >
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">{t('filter.label')}</InputLabel>
+        <InputLabel
+          id="demo-simple-select-label"
+        >
+          {t('filterMenu.orderBy.label')}
+
+        </InputLabel>
         <Select
+          sx={{
+            // lineHeight: '2.1em'
+          }}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={getFilterValue(gameFilter)}
+          value={convertFilterValue(gameFilter)}
           label="Order"
           onChange={handleChange}
         >
-          <MenuItem value="popularity">{t('filter.popularity')}</MenuItem>
-          <MenuItem value="name">{t('filter.nameIncrease')}</MenuItem>
-          <MenuItem value="nameDec">{t('filter.nameDecrease')}</MenuItem>
-          <MenuItem value="rating">{t('filter.ratingIncrease')}</MenuItem>
-          <MenuItem value="ratingDec">{t('filter.ratingDecrease')}</MenuItem>
-          <MenuItem value="released">{t('filter.releasedIncrease')}</MenuItem>
-          <MenuItem value="releasedDec">{t('filter.releasedDecrease')}</MenuItem>
+          <MenuItem value="popularity">{t('filterMenu.orderBy.popularity')}</MenuItem>
+          <MenuItem value="name">{t('filterMenu.orderBy.nameIncrease')}</MenuItem>
+          <MenuItem value="nameDec">{t('filterMenu.orderBy.nameDecrease')}</MenuItem>
+          <MenuItem value="rating">{t('filterMenu.orderBy.ratingIncrease')}</MenuItem>
+          <MenuItem value="ratingDec">{t('filterMenu.orderBy.ratingDecrease')}</MenuItem>
+          <MenuItem value="released">{t('filterMenu.orderBy.releasedIncrease')}</MenuItem>
+          <MenuItem value="releasedDec">{t('filterMenu.orderBy.releasedDecrease')}</MenuItem>
         </Select>
       </FormControl>
     </Box>
   )
 }
-export default FilterBar
+export default OrderSelect

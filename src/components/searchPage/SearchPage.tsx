@@ -6,6 +6,8 @@ import React, { useEffect } from 'react'
 import Grid from '@mui/system/Unstable_Grid'
 import axios from 'axios'
 import { useTranslation } from 'react-i18next'
+import { Typography } from '@mui/material'
+import { Container } from '@mui/system'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import { addGamesCount } from '../../slices/gamesSlice'
 import Pagination from '../ui/Pagination'
@@ -43,11 +45,13 @@ const SearchPage = () => {
   }, [page])
 
   return (
-    <>
-      <h1>{`${t('searchPage.title')}: ${searchWord}`}</h1>
+    <Container>
+      <Typography variant="h4" component="h2">
+        {`${t('searchPage.title')}: ${searchWord}`}
+      </Typography>
       {isFetching ? <Preloader />
         : (
-          <Grid container spacing={1} sx={{ bgcolor: 'black' }}>
+          <Grid container sx={{ bgcolor: 'black' }}>
             {searchGamesStore.map((item: any) => (
               <SearchItem
                 name={item.name}
@@ -59,7 +63,7 @@ const SearchPage = () => {
           </Grid>
           )}
       <Pagination />
-    </>
+    </Container>
   )
 }
 
