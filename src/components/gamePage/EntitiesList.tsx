@@ -1,10 +1,13 @@
+/* eslint-disable functional/no-expression-statements */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable functional/prefer-immutable-types */
 import React from 'react'
 import { Typography } from '@mui/material'
 import { type listsType } from '../../slices/gamesSlice'
 
-const EntitiesList = (entitiesList: listsType[], title: string): JSX.Element => (
+export interface entitiesListType { entitiesList: listsType[], title: string }
+
+const EntitiesList = ({ entitiesList, title }: entitiesListType): JSX.Element => (
   <>
     <Typography
       component="h4"

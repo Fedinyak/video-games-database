@@ -1,3 +1,4 @@
+/* eslint-disable functional/prefer-immutable-types */
 /* eslint-disable multiline-ternary */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable max-len */
@@ -20,14 +21,15 @@ import axios from 'axios'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Container } from '@mui/system'
-import { Typography } from '@mui/material'
+import { Rating, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import { addActiveGame, addScreenshots } from '../../slices/activeGameSlice'
 import { fetching } from '../../slices/uiSlice'
 import Preloader from '../ui/Preloader'
 import routesPath from '../../routesPath'
-// import EntitiesList from './EntitiesList'
+import EntitiesList from './EntitiesList'
+import { type listsType } from '../../slices/gamesSlice'
 // eslint-disable-next-line max-len
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type, functional/prefer-immutable-types
 
@@ -42,6 +44,15 @@ const GamePage = (): JSX.Element => {
   // console.log(location, 'locationnn')
   const dispatch = useAppDispatch()
   const gameStore = useAppSelector((state) => state.activeGame.item)
+  // const platformsStore = gameStore?.platforms.forEach(item => {
+
+  // })
+  const platformsNormalizeStore = (data: [{ platform: listsType }]): listsType[] => {
+    const result: listsType[] = []
+    data.forEach((item) => result.push(item.platform))
+    return result
+  }
+
   const screenshotsStore = useAppSelector(
     (state) => state.activeGame.screenshots
   )
@@ -120,6 +131,7 @@ const GamePage = (): JSX.Element => {
   const screenshots = screenshotsStore
   const isFetching = useAppSelector((state) => state.uiState.isFetching)
   console.log(screenshots, 'screenshots--------------')
+  // console.log(gameStore?.genres, 'gameStore.genres--------------------------------------------')
   return (
     <div>
       {isFetching ? (
@@ -185,10 +197,10 @@ const GamePage = (): JSX.Element => {
                 </Container>
               </Box>
             </Box>
-            <Container>
+            <Container sx={{ paddingTop: 1 }}>
               <Grid
                 container
-                rowSpacing={1}
+                rowSpacing={2}
                 columnSpacing={{ xs: 2, sm: 4, md: 6 }}
               >
                 <Grid xs={12} sm={8} md={6}>
@@ -205,33 +217,64 @@ const GamePage = (): JSX.Element => {
                     {description}
                   </Typography>
                 </Grid>
-                <Grid xs={6} sm={4} md={6}>
-                  <Typography
-                    component="h4"
-                    sx={{
-                      color: 'white',
-                      fontWeight: 'bolder'
-                    }}
-                  >
-                    {t('gamePage.platforms')}
-                  </Typography>
-                  {gameStore?.platforms.map((item) => (
-                    <Typography
-                      key={item.platform.id}
-                      variant="body1"
-                      sx={{
-                        color: 'white'
-                      }}
-                    >
-                      {item.platform.name}
-                    </Typography>
-                  ))}
-                </Grid>
-                <Grid xs={6} sm={4} md={6}>
-                  {/* <EntitiesList
-                    entitiesList={gameStore?.genres}
-                    title={t('gamePage.genres')}
-                  /> */}
+                <Grid xs={12} sm={4} md={6}>
+                  {(gameStore !== null) && (
+                  <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 4, md: 6 }}>
+                    {/* <Grid xs={6} sm={4} md={2}>
+                      <Typography
+                        component="h4"
+                        sx={{
+                          color: 'white',
+                          fontWeight: 'bolder'
+                        }}
+                      >
+                        {t('gamePage.platforms')}
+                      </Typography>
+
+                      {gameStore?.platforms.map((item) => (
+                        <Typography
+                          key={item.platform.id}
+                          variant="body1"
+                          sx={{
+                            color: 'white'
+                          }}
+                        >
+                          {item.platform.name}
+                        </Typography>
+                      ))}
+                    </Grid> */}
+                    <Grid xs={12} sm={4} md={2}>
+                      <Typography
+                        component="h4"
+                        sx={{
+                          color: 'white',
+                          fontWeight: 'bolder'
+                        }}
+                      >
+                        {t('gamePage.rating')}
+                      </Typography>
+                      <Rating name="rating" value={gameStore.rating} readOnly size="large" />
+                    </Grid>
+                    <Grid xs={6} sm={4} md={2}>
+                      <EntitiesList
+                        entitiesList={platformsNormalizeStore(gameStore.platforms)}
+                        title={t('gamePage.platforms')}
+                      />
+                    </Grid>
+                    <Grid xs={6} sm={4} md={2}>
+                      <EntitiesList
+                        entitiesList={gameStore.genres}
+                        title={t('gamePage.genres')}
+                      />
+                    </Grid>
+                    <Grid xs={6} sm={4} md={2}>
+                      <EntitiesList
+                        entitiesList={gameStore.publishers}
+                        title={t('gamePage.publishers')}
+                      />
+                    </Grid>
+                  </Grid>
+                  )}
                 </Grid>
               </Grid>
             </Container>
