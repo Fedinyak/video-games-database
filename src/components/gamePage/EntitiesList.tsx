@@ -23,7 +23,7 @@ const EntitiesList = ({ entitiesList, title }: entitiesListType): JSX.Element =>
         key={id}
         variant="body1"
         sx={{
-          color: 'white'
+          color: '#90979A'
         }}
       >
         {name}

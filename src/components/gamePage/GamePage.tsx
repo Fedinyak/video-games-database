@@ -197,7 +197,7 @@ const GamePage = (): JSX.Element => {
                 </Container>
               </Box>
             </Box>
-            <Container sx={{ paddingTop: 1 }}>
+            <Container sx={{ paddingTop: 1, paddingBottom: 2 }}>
               <Grid
                 container
                 rowSpacing={2}
@@ -255,22 +255,22 @@ const GamePage = (): JSX.Element => {
                       </Typography>
                       <Rating name="rating" value={gameStore.rating} readOnly size="large" />
                     </Grid>
-                    <Grid xs={6} sm={4} md={2}>
+                    <Grid xs={6} sm={4} md={4}>
                       <EntitiesList
-                        entitiesList={platformsNormalizeStore(gameStore.platforms)}
-                        title={t('gamePage.platforms')}
+                        entitiesList={gameStore.publishers}
+                        title={t('gamePage.publishers')}
                       />
                     </Grid>
-                    <Grid xs={6} sm={4} md={2}>
+                    <Grid xs={6} sm={4} md={4}>
                       <EntitiesList
                         entitiesList={gameStore.genres}
                         title={t('gamePage.genres')}
                       />
                     </Grid>
-                    <Grid xs={6} sm={4} md={2}>
+                    <Grid xs={6} sm={4} md={12}>
                       <EntitiesList
-                        entitiesList={gameStore.publishers}
-                        title={t('gamePage.publishers')}
+                        entitiesList={platformsNormalizeStore(gameStore.platforms)}
+                        title={t('gamePage.platforms')}
                       />
                     </Grid>
                   </Grid>
@@ -279,7 +279,7 @@ const GamePage = (): JSX.Element => {
               </Grid>
             </Container>
           </Box>
-          <Container>
+          <Container sx={{ paddingTop: 1, paddingBottom: 4 }}>
             <Typography
               component="h4"
               // variant="body1"
