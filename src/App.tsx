@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 // import { I18nextProvider } from 'react-i18next'
 import { Box } from '@mui/system'
 import axios from 'axios'
-import storeTemplate from './components/testTemp/storeTemplate'
+// import storeTemplate from './components/testTemp/storeTemplate'
 import Catalog from './components/catalogPage/Catalog'
 import Main from './components/mainPage/Main'
 import Header from './components/header/Header'
@@ -76,7 +76,7 @@ const App = (): JSX.Element => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path={routesPath.mainPagePath()} element={<Main store={storeTemplate} />} />
+          <Route path={routesPath.mainPagePath()} element={<Main />} />
           <Route path={routesPath.catalogPagePath()} element={<Catalog />} />
           <Route path={routesPath.gamePagePath()} element={<GamePage />} />
           <Route path={routesPath.searchPagePath()} element={<SearchPage />} />

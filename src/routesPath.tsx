@@ -17,10 +17,10 @@ const routes = {
   gameListApiPath: (
     pageSize: number,
     page: number,
-    orderBy: string,
-    platforms: string,
-    publishers: string,
-    genres: string
+    orderBy: string = '',
+    platforms: string = '',
+    publishers: string = '',
+    genres: string = ''
   ): string => {
     const resultPath: string[] = [`${apiPath}/games${key}&page_size=${pageSize}&page=${page}&ordering=${orderBy}`]
     // const optionalFilterListKey = ['platforms', 'publishers', 'genres']

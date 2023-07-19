@@ -1,3 +1,4 @@
+/* eslint-disable functional/prefer-immutable-types */
 /* eslint-disable multiline-ternary */
 /* eslint-disable functional/no-return-void */
 /* eslint-disable functional/no-expression-statements */
@@ -234,6 +235,7 @@ const Catalog = () => {
       // const data = response.data.results
       dispatch(addGamesCount(response.data.count))
       dispatch(addGames(response.data.results))
+      // dispatch(addInfinityPageScroll(1))
       dispatch(fetching(false))
       dispatch(addActiveGame(null))
       // dispatch(addGames(data))
@@ -256,7 +258,7 @@ const Catalog = () => {
         : (
           <Grid container spacing={1} sx={{ bgcolor: 'black' }}>
             {/* {storeTemplate.map( */}
-            {gamesStore.map((item: any) => (
+            {gamesStore.map((item: { name: string, id: number, background_image: string }) => (
               <CatalogItem
                 name={item.name}
                 id={item.id}

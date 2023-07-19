@@ -21,9 +21,11 @@ export interface listsType {
 
 export interface itemsState {
   items: gamesType[]
+  itemsForInfinityScroll: gamesType[]
   itemsCount: number
   pageSize: number
   page: number
+  infinityPageScroll: number
   order: string
   platformsList: listsType[]
   platforms: string[]
@@ -35,9 +37,11 @@ export interface itemsState {
 
 const initialState: itemsState = {
   items: [],
+  itemsForInfinityScroll: [],
   itemsCount: 0,
   pageSize: 0,
   page: 1,
+  infinityPageScroll: 1,
   order: '',
   // platforms: '4,5',
   platformsList: [],
@@ -63,8 +67,17 @@ const gamesSlice = createSlice({
       // state.items = [state.items, ...action.payload]
       // state = 'action.payload'
     },
+    addMoreGames: (state, action: PayloadAction<gamesType[]>) => {
+      console.log(action.payload, 'action.payloaddddddd')
+      state.itemsForInfinityScroll = action.payload
+      // state.itemsForInfinityScroll = [...state.itemsForInfinityScroll, ...action.payload]
+      // state.itemsForInfinityScroll.push(action.payload)
+    },
     addGamesCount: (state, action: PayloadAction<number>) => {
       state.itemsCount = action.payload
+    },
+    addInfinityPageScroll: (state, action: PayloadAction<number>) => {
+      state.infinityPageScroll = action.payload
     },
     addActivePage: (state, action: PayloadAction<number>) => {
       state.page = action.payload
@@ -99,8 +112,10 @@ const gamesSlice = createSlice({
 // Действия генерируются автоматически из имен ключей редьюсеров
 export const {
   addGames,
+  addMoreGames,
   addGamesCount,
   addActivePage,
+  addInfinityPageScroll,
   addOrder,
   addPageSize,
   addPlatformsList,
