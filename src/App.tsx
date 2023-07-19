@@ -78,7 +78,7 @@ const App = (): JSX.Element => {
         <Routes>
           <Route path={routesPath.mainPagePath()} element={<Main />} />
           <Route path={routesPath.catalogPagePath()} element={<Catalog />} />
-          <Route path={routesPath.gamePagePath()} element={<GamePage />} />
+          <Route path={routesPath.gamePagePath(':id')} element={<GamePage />} />
           <Route path={routesPath.searchPagePath()} element={<SearchPage />} />
           <Route path={routesPath.notFoundPagePath()} element={<NotFoundPage />} />
         </Routes>

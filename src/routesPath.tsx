@@ -49,7 +49,7 @@ const routes = {
   },
   mainPagePath: () => '/',
   catalogPagePath: () => '/catalog',
-  gamePagePath: () => '/catalog/:id',
+  gamePagePath: (id: string): string => `/catalog/${id}`,
   searchPagePath: () => '/search',
   notFoundPagePath: () => '*'
 }

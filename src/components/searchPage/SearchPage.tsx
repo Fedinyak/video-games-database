@@ -57,7 +57,8 @@ const SearchPage = () => {
                 name={item.name}
                 id={item.id}
                 key={item.id}
-                image={item.background_image}
+                background_image={item.background_image}
+                rating={item.rating}
               />
             ))}
           </Grid>

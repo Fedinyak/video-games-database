@@ -9,6 +9,7 @@ export interface searchGamesState {
   id: number
   name: string
   background_image: string
+  rating: number
 }
 
 export interface searchItemsState {
