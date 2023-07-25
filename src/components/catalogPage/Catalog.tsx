@@ -85,163 +85,168 @@ const Catalog = () => {
       console.log(getFliteredItemsId(platforms, platformsList), 'getFliteredItemsId-----------------')
       // const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
       // const response = await axios.get(`https://api.rawg.io/api/games?key=${key}&page_size=${pageSize}&page=${page}&ordering=${orderBy}`)
-      const response = await axios.get(routesPath.gameListApiPath(
-        pageSize,
-        page,
-        orderBy,
-        getFliteredItemsId(platforms, platformsList),
-        getFliteredItemsId(publishers, publishersList),
-        getFliteredItemsId(genres, genresList)
+      try {
+        const response = await axios.get(routesPath.gameListApiPath(
+          pageSize,
+          page,
+          orderBy,
+          getFliteredItemsId(platforms, platformsList),
+          getFliteredItemsId(publishers, publishersList),
+          getFliteredItemsId(genres, genresList)
         // `${platforms.join(',')}`,
         // `${publishers.join(',')}`,
         // `${genres.join(',')}`
-      ))
-      // get one game and page
-      // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0%20%20&page_size=21%20%20&page=1%20%20&ordering=%20%20&platforms=%20%20&publishers=%20%20&genres=
-      // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=1&page=3
-      // ordering response
-      // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=21&page=1&ordering=-name,&platforms=4,5,&publishers=electronic-arts,microsoft-studios,&genres=action,indie rout ---------------------------
-      // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=21&page=1&ordering=,&platforms=4,5,&publishers=electronic-arts,microsoft-studios,&genres=action,indie rout -----
-      // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=21&page=1&ordering=,&platforms=4,5,&publishers=electronic-arts,microsoft-studios,&genres=action,indie rout ---------------------------
-      // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=21&page=1&ordering=&platforms=&publishers=&genres=
-      // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=21&page=1&ordering=-rating,&4,5=4,5,&electronic-arts,microsoft-studios=electronic-arts,microsoft-studios,&action,indie=action,indie
-      // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=5&page=1&ordering=-released
-      // search
-      // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=10&page=2&%27%27&search=zelda
-      // console.log(response.status); // код ответа
-      // console.log(response.headers); // напечатает заголовки
-      // console.log(response.data.results); // тело ответа
-      // dispatch(response.data.results);
-      // dispatch({ id: 2, name: 'df', background_image: 'df' },
-      // )
-      // dispatch(addGames(storeTemplate))
-      // Пагинация (в идеале, бесконечный скролл)
-      // Сортировка по: рейтингу и дате релиза игры (в обе стороны)
-      // Фильтрация по платформам
-      // Поиск по названию
-      // Содержимое каждой “плитки” игры:
-      // Название
-      // Постер
-      // Рейтинг
-      // Дата релиза
-      // Описание
-      // Ссылка на сайт игры
-      // Слайдер со скриншотами игры
+        ))
+        // get one game and page
+        // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0%20%20&page_size=21%20%20&page=1%20%20&ordering=%20%20&platforms=%20%20&publishers=%20%20&genres=
+        // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=1&page=3
+        // ordering response
+        // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=21&page=1&ordering=-name,&platforms=4,5,&publishers=electronic-arts,microsoft-studios,&genres=action,indie rout ---------------------------
+        // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=21&page=1&ordering=,&platforms=4,5,&publishers=electronic-arts,microsoft-studios,&genres=action,indie rout -----
+        // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=21&page=1&ordering=,&platforms=4,5,&publishers=electronic-arts,microsoft-studios,&genres=action,indie rout ---------------------------
+        // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=21&page=1&ordering=&platforms=&publishers=&genres=
+        // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=21&page=1&ordering=-rating,&4,5=4,5,&electronic-arts,microsoft-studios=electronic-arts,microsoft-studios,&action,indie=action,indie
+        // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=5&page=1&ordering=-released
+        // search
+        // https://api.rawg.io/api/games?key=e1dae6cdd05a459f82b1cf12bbea83f0&page_size=10&page=2&%27%27&search=zelda
+        // console.log(response.status); // код ответа
+        // console.log(response.headers); // напечатает заголовки
+        // console.log(response.data.results); // тело ответа
+        // dispatch(response.data.results);
+        // dispatch({ id: 2, name: 'df', background_image: 'df' },
+        // )
+        // dispatch(addGames(storeTemplate))
+        // Пагинация (в идеале, бесконечный скролл)
+        // Сортировка по: рейтингу и дате релиза игры (в обе стороны)
+        // Фильтрация по платформам
+        // Поиск по названию
+        // Содержимое каждой “плитки” игры:
+        // Название
+        // Постер
+        // Рейтинг
+        // Дата релиза
+        // Описание
+        // Ссылка на сайт игры
+        // Слайдер со скриншотами игры
 
-      // const response = {
-      //   data: {
-      //     results: [
-      //       {
-      //         id: 3498,
-      //         name: 'Grand Theft Auto V',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
-      //       },
-      //       {
-      //         id: 3328,
-      //         name: 'The Witcher 3: Wild Hunt',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
-      //       },
-      //       {
-      //         id: 3498,
-      //         name: 'Grand Theft Auto V',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
-      //       },
-      //       {
-      //         id: 3328,
-      //         name: 'The Witcher 3: Wild Hunt',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
-      //       },
-      //       {
-      //         id: 3498,
-      //         name: 'Grand Theft Auto V',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
-      //       },
-      //       {
-      //         id: 3328,
-      //         name: 'The Witcher 3: Wild Hunt',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
-      //       },
-      //       {
-      //         id: 3498,
-      //         name: 'Grand Theft Auto V',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
-      //       },
-      //       {
-      //         id: 3328,
-      //         name: 'The Witcher 3: Wild Hunt',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
-      //       },
-      //       {
-      //         id: 3498,
-      //         name: 'Grand Theft Auto V',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
-      //       },
-      //       {
-      //         id: 3328,
-      //         name: 'The Witcher 3: Wild Hunt',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
-      //       },
-      //       {
-      //         id: 3498,
-      //         name: 'Grand Theft Auto V',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
-      //       },
-      //       {
-      //         id: 3328,
-      //         name: 'The Witcher 3: Wild Hunt',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
-      //       },
-      //       {
-      //         id: 3498,
-      //         name: 'Grand Theft Auto V',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
-      //       },
-      //       {
-      //         id: 3328,
-      //         name: 'The Witcher 3: Wild Hunt',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
-      //       },
-      //       {
-      //         id: 3498,
-      //         name: 'Grand Theft Auto V',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
-      //       },
-      //       {
-      //         id: 3328,
-      //         name: 'The Witcher 3: Wild Hunt',
-      //         background_image:
-      //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
-      //       }
+        // const response = {
+        //   data: {
+        //     results: [
+        //       {
+        //         id: 3498,
+        //         name: 'Grand Theft Auto V',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
+        //       },
+        //       {
+        //         id: 3328,
+        //         name: 'The Witcher 3: Wild Hunt',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
+        //       },
+        //       {
+        //         id: 3498,
+        //         name: 'Grand Theft Auto V',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
+        //       },
+        //       {
+        //         id: 3328,
+        //         name: 'The Witcher 3: Wild Hunt',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
+        //       },
+        //       {
+        //         id: 3498,
+        //         name: 'Grand Theft Auto V',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
+        //       },
+        //       {
+        //         id: 3328,
+        //         name: 'The Witcher 3: Wild Hunt',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
+        //       },
+        //       {
+        //         id: 3498,
+        //         name: 'Grand Theft Auto V',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
+        //       },
+        //       {
+        //         id: 3328,
+        //         name: 'The Witcher 3: Wild Hunt',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
+        //       },
+        //       {
+        //         id: 3498,
+        //         name: 'Grand Theft Auto V',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
+        //       },
+        //       {
+        //         id: 3328,
+        //         name: 'The Witcher 3: Wild Hunt',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
+        //       },
+        //       {
+        //         id: 3498,
+        //         name: 'Grand Theft Auto V',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
+        //       },
+        //       {
+        //         id: 3328,
+        //         name: 'The Witcher 3: Wild Hunt',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
+        //       },
+        //       {
+        //         id: 3498,
+        //         name: 'Grand Theft Auto V',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
+        //       },
+        //       {
+        //         id: 3328,
+        //         name: 'The Witcher 3: Wild Hunt',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
+        //       },
+        //       {
+        //         id: 3498,
+        //         name: 'Grand Theft Auto V',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg'
+        //       },
+        //       {
+        //         id: 3328,
+        //         name: 'The Witcher 3: Wild Hunt',
+        //         background_image:
+        //           'https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg'
+        //       }
 
-      //     ],
-      //     count: 4
-      //   }
-      // }
-      // const data = response.data.results
-      dispatch(addGamesCount(response.data.count))
-      dispatch(addGames(response.data.results))
-      // dispatch(addInfinityPageScroll(1))
-      dispatch(fetching(false))
-      dispatch(addActiveGame(null))
-      // dispatch(addGames(data))
-      // console.log(store)
-      console.log(gamesStore)
+        //     ],
+        //     count: 4
+        //   }
+        // }
+        // const data = response.data.results
+        dispatch(addGamesCount(response.data.count))
+        dispatch(addGames(response.data.results))
+        // dispatch(addInfinityPageScroll(1))
+        dispatch(fetching(false))
+        dispatch(addActiveGame(null))
+        // dispatch(addGames(data))
+        // console.log(store)
+        console.log(gamesStore)
       // store.push('response.data.results');
+      } catch (error) {
+        console.error(error)
+        throw error
+      }
     }
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     requestData()

@@ -57,16 +57,20 @@ const Main = () => {
     const requestData = async () => {
       // dispatch(fetching(true))
       // dispatch(addPageSize(pageSize))
+      try {
+        const response = await axios.get(routesPath.gameListApiPath(pageSize, page, ''))
 
-      const response = await axios.get(routesPath.gameListApiPath(pageSize, page, ''))
-
-      // dispatch(addGamesCount(response.data.count))
-      dispatch(addMoreGames(response.data.results))
-      setState([...state, ...response.data.results])
+        // dispatch(addGamesCount(response.data.count))
+        dispatch(addMoreGames(response.data.results))
+        setState([...state, ...response.data.results])
       // setState(state.push(response.data.results)
       // setState(response.data.results)
       // dispatch(fetching(false))
       // dispatch(addActiveGame(null))
+      } catch (error) {
+        console.error(error)
+        throw error
+      }
     }
     // eslint-disable-next-line no-debugger
     // debugger

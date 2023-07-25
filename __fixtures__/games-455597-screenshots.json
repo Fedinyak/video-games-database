@@ -1,0 +1,49 @@
+{
+  "count": 6,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 2634032,
+      "image": "https://media.rawg.io/media/screenshots/252/252844a85405a3147440806709a47f79.jpg",
+      "width": 1399,
+      "height": 787,
+      "is_deleted": false
+    },
+    {
+      "id": 2634033,
+      "image": "https://media.rawg.io/media/screenshots/88a/88a0a4d7a1f4dbe78c2c34810afcaffa.jpg",
+      "width": 1399,
+      "height": 787,
+      "is_deleted": false
+    },
+    {
+      "id": 2634034,
+      "image": "https://media.rawg.io/media/screenshots/bef/bef5d6085129fda4d26a2293b9edb30e.jpg",
+      "width": 1399,
+      "height": 787,
+      "is_deleted": false
+    },
+    {
+      "id": 2769287,
+      "image": "https://media.rawg.io/media/screenshots/0f1/0f157efb373e3c5da268f2ecdb03701e.jpg",
+      "width": 3840,
+      "height": 2160,
+      "is_deleted": false
+    },
+    {
+      "id": 2769288,
+      "image": "https://media.rawg.io/media/screenshots/5f4/5f429ee02d86be1822963fd0a77a71ab.jpg",
+      "width": 3840,
+      "height": 2160,
+      "is_deleted": false
+    },
+    {
+      "id": 2769289,
+      "image": "https://media.rawg.io/media/screenshots/c01/c01d8a0c413b3a065ea52b80f1ad6212.jpg",
+      "width": 3840,
+      "height": 2160,
+      "is_deleted": false
+    }
+  ]
+}

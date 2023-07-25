@@ -15,7 +15,7 @@ const SearchItem = ({ name, id, background_image: image, rating }: Readonly<sear
           display: 'flex',
           // flexDirection: { xs: 'column' },
           flexDirection: { xs: 'row' },
-          // alignItems: 'center',
+          alignItems: 'center',
           // bgcolor: '#474747',
           overflow: 'hidden',
           // borderRadius: '12px,

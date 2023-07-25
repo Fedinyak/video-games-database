@@ -1,0 +1,610 @@
+{
+  "id": 455597,
+  "slug": "it-takes-two-2",
+  "name": "It Takes Two",
+  "name_original": "It Takes Two",
+  "description": "<p>Bring your favorite co-op partner and together step into the shoes of May and Cody. As the couple is going through a divorce, through unknown means their minds are transported into two dolls which their daughter, Rose, made to represent them. Now they must reluctantly find a way to get back into their bodies, a quest which takes them through the most wild, unexpected and fantastical journey imaginable.</p>\n<p>It Takes Two further builds on Hazelight’s proven track record of making rich and engaging co-op experiences. While developing It Takes Two it has been the team’s number one priority to truly merge story and gameplay. Allowing both to influence each other guarantees a game that is as engaging to play as it is compelling to experience.</p>",
+  "metacritic": 88,
+  "metacritic_platforms": [
+    {
+      "metascore": 89,
+      "url": "https://www.metacritic.com/game/xbox-series-x/it-takes-two",
+      "platform": {
+        "platform": 186,
+        "name": "Xbox Series S/X",
+        "slug": "xbox-series-x"
+      }
+    },
+    {
+      "metascore": 84,
+      "url": "https://www.metacritic.com/game/switch/it-takes-two",
+      "platform": {
+        "platform": 7,
+        "name": "Nintendo Switch",
+        "slug": "nintendo-switch"
+      }
+    },
+    {
+      "metascore": 89,
+      "url": "https://www.metacritic.com/game/playstation-4/it-takes-two",
+      "platform": {
+        "platform": 18,
+        "name": "PlayStation 4",
+        "slug": "playstation4"
+      }
+    },
+    {
+      "metascore": 89,
+      "url": "https://www.metacritic.com/game/pc/it-takes-two",
+      "platform": { "platform": 4, "name": "PC", "slug": "pc" }
+    },
+    {
+      "metascore": 88,
+      "url": "https://www.metacritic.com/game/playstation-5/it-takes-two",
+      "platform": {
+        "platform": 187,
+        "name": "PlayStation 5",
+        "slug": "playstation5"
+      }
+    }
+  ],
+  "released": "2021-03-26",
+  "tba": false,
+  "updated": "2023-07-19T00:30:30",
+  "background_image": "https://media.rawg.io/media/games/d47/d479582ed0a46496ad34f65c7099d7e5.jpg",
+  "background_image_additional": "https://media.rawg.io/media/screenshots/0da/0da98b6c57676f2f16cb6bf8818c8642.jpg",
+  "website": "https://hazelight.se/games/it-takes-two/",
+  "rating": 4.53,
+  "rating_top": 5,
+  "ratings": [
+    { "id": 5, "title": "exceptional", "count": 782, "percent": 68.3 },
+    { "id": 4, "title": "recommended", "count": 273, "percent": 23.84 },
+    { "id": 3, "title": "meh", "count": 49, "percent": 4.28 },
+    { "id": 1, "title": "skip", "count": 41, "percent": 3.58 }
+  ],
+  "reactions": {
+    "1": 9,
+    "3": 3,
+    "5": 2,
+    "6": 1,
+    "7": 4,
+    "8": 10,
+    "9": 2,
+    "10": 1,
+    "11": 1,
+    "12": 1
+  },
+  "added": 4017,
+  "added_by_status": {
+    "yet": 207,
+    "owned": 1981,
+    "beaten": 978,
+    "toplay": 517,
+    "dropped": 146,
+    "playing": 188
+  },
+  "playtime": 10,
+  "screenshots_count": 19,
+  "movies_count": 0,
+  "creators_count": 1,
+  "achievements_count": 55,
+  "parent_achievements_count": 19,
+  "reddit_url": "https://www.reddit.com/r/ItTakesTwo/",
+  "reddit_name": "ItTakesTwo",
+  "reddit_description": "Welcome to the It Takes Two Subreddit. A community for It Takes two developed by Hazelight Studios.",
+  "reddit_logo": "",
+  "reddit_count": 27,
+  "twitch_count": 120,
+  "youtube_count": 1000000,
+  "reviews_text_count": 28,
+  "ratings_count": 1117,
+  "suggestions_count": 817,
+  "alternative_names": [],
+  "metacritic_url": "https://www.metacritic.com/game/playstation-5/it-takes-two",
+  "parents_count": 0,
+  "additions_count": 1,
+  "game_series_count": 0,
+  "user_game": null,
+  "reviews_count": 1145,
+  "saturated_color": "0f0f0f",
+  "dominant_color": "0f0f0f",
+  "parent_platforms": [
+    { "platform": { "id": 1, "name": "PC", "slug": "pc" } },
+    { "platform": { "id": 2, "name": "PlayStation", "slug": "playstation" } },
+    { "platform": { "id": 3, "name": "Xbox", "slug": "xbox" } },
+    { "platform": { "id": 7, "name": "Nintendo", "slug": "nintendo" } }
+  ],
+  "platforms": [
+    {
+      "platform": {
+        "id": 187,
+        "name": "PlayStation 5",
+        "slug": "playstation5",
+        "image": null,
+        "year_end": null,
+        "year_start": 2020,
+        "games_count": 898,
+        "image_background": "https://media.rawg.io/media/games/053/053fc543bf488349610f1ae2d0c1b51b.jpg"
+      },
+      "released_at": "2021-03-26",
+      "requirements": {}
+    },
+    {
+      "platform": {
+        "id": 186,
+        "name": "Xbox Series S/X",
+        "slug": "xbox-series-x",
+        "image": null,
+        "year_end": null,
+        "year_start": 2020,
+        "games_count": 777,
+        "image_background": "https://media.rawg.io/media/games/121/1213f8b9b0a26307e672cf51f34882f8.jpg"
+      },
+      "released_at": "2021-03-26",
+      "requirements": {}
+    },
+    {
+      "platform": {
+        "id": 18,
+        "name": "PlayStation 4",
+        "slug": "playstation4",
+        "image": null,
+        "year_end": null,
+        "year_start": null,
+        "games_count": 6664,
+        "image_background": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"
+      },
+      "released_at": "2021-03-26",
+      "requirements": {}
+    },
+    {
+      "platform": {
+        "id": 4,
+        "name": "PC",
+        "slug": "pc",
+        "image": null,
+        "year_end": null,
+        "year_start": null,
+        "games_count": 514077,
+        "image_background": "https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg"
+      },
+      "released_at": "2021-03-26",
+      "requirements": {
+        "minimum": "Minimum:\nRequires a 64-bit processor and operating system\nOS: Windows 8.1 64-bit or Windows 10 64-bit\nProcessor: Intel Core i3-2100T or AMD FX 6100\nMemory: 8 GB RAM\nGraphics: Nvidia GeForce GTX 660 or AMD R7 260x\nDirectX: Version 11\nNetwork: Broadband Internet connection\nStorage: 50 GB available space",
+        "recommended": "Recommended:\nRequires a 64-bit processor and operating system\nOS: Windows 8.1 64-bit or Windows 10 64-bit\nProcessor: Intel Core i5 3570K or AMD Ryzen 3 1300x\nMemory: 16 GB RAM\nGraphics: Nvidia GeForce GTX 980 or AMD R9 290X\nDirectX: Version 11\nNetwork: Broadband Internet connection\nStorage: 50 GB available space"
+      }
+    },
+    {
+      "platform": {
+        "id": 7,
+        "name": "Nintendo Switch",
+        "slug": "nintendo-switch",
+        "image": null,
+        "year_end": null,
+        "year_start": null,
+        "games_count": 5275,
+        "image_background": "https://media.rawg.io/media/games/e2d/e2d3f396b16dded0f841c17c9799a882.jpg"
+      },
+      "released_at": "2021-03-26",
+      "requirements": {}
+    },
+    {
+      "platform": {
+        "id": 1,
+        "name": "Xbox One",
+        "slug": "xbox-one",
+        "image": null,
+        "year_end": null,
+        "year_start": null,
+        "games_count": 5535,
+        "image_background": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+      },
+      "released_at": "2021-03-26",
+      "requirements": {}
+    }
+  ],
+  "stores": [
+    {
+      "id": 847879,
+      "url": "",
+      "store": {
+        "id": 6,
+        "name": "Nintendo Store",
+        "slug": "nintendo",
+        "domain": "nintendo.com",
+        "games_count": 8877,
+        "image_background": "https://media.rawg.io/media/games/63f/63f0e68688cad279ed38cde931dbfcdb.jpg"
+      }
+    },
+    {
+      "id": 532023,
+      "url": "",
+      "store": {
+        "id": 1,
+        "name": "Steam",
+        "slug": "steam",
+        "domain": "store.steampowered.com",
+        "games_count": 76938,
+        "image_background": "https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg"
+      }
+    },
+    {
+      "id": 535589,
+      "url": "",
+      "store": {
+        "id": 2,
+        "name": "Xbox Store",
+        "slug": "xbox-store",
+        "domain": "microsoft.com",
+        "games_count": 4767,
+        "image_background": "https://media.rawg.io/media/games/d82/d82990b9c67ba0d2d09d4e6fa88885a7.jpg"
+      }
+    },
+    {
+      "id": 556676,
+      "url": "",
+      "store": {
+        "id": 3,
+        "name": "PlayStation Store",
+        "slug": "playstation-store",
+        "domain": "store.playstation.com",
+        "games_count": 7825,
+        "image_background": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"
+      }
+    }
+  ],
+  "developers": [
+    {
+      "id": 13798,
+      "name": "Hazelight",
+      "slug": "hazelight",
+      "games_count": 3,
+      "image_background": "https://media.rawg.io/media/games/9eb/9eb025f9c29e7a3e3fc792c035629960.jpg"
+    }
+  ],
+  "genres": [
+    {
+      "id": 4,
+      "name": "Action",
+      "slug": "action",
+      "games_count": 173304,
+      "image_background": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Adventure",
+      "slug": "adventure",
+      "games_count": 133005,
+      "image_background": "https://media.rawg.io/media/games/8d6/8d69eb6c32ed6acfd75f82d532144993.jpg"
+    },
+    {
+      "id": 83,
+      "name": "Platformer",
+      "slug": "platformer",
+      "games_count": 100619,
+      "image_background": "https://media.rawg.io/media/games/d5a/d5a24f9f71315427fa6e966fdd98dfa6.jpg"
+    }
+  ],
+  "tags": [
+    {
+      "id": 40847,
+      "name": "Steam Achievements",
+      "slug": "steam-achievements",
+      "language": "eng",
+      "games_count": 30886,
+      "image_background": "https://media.rawg.io/media/games/f46/f466571d536f2e3ea9e815ad17177501.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Multiplayer",
+      "slug": "multiplayer",
+      "language": "eng",
+      "games_count": 35140,
+      "image_background": "https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg"
+    },
+    {
+      "id": 40836,
+      "name": "Full controller support",
+      "slug": "full-controller-support",
+      "language": "eng",
+      "games_count": 14498,
+      "image_background": "https://media.rawg.io/media/games/310/3106b0e012271c5ffb16497b070be739.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Co-op",
+      "slug": "co-op",
+      "language": "eng",
+      "games_count": 9911,
+      "image_background": "https://media.rawg.io/media/games/b49/b4912b5dbfc7ed8927b65f05b8507f6c.jpg"
+    },
+    {
+      "id": 118,
+      "name": "Story Rich",
+      "slug": "story-rich",
+      "language": "eng",
+      "games_count": 18366,
+      "image_background": "https://media.rawg.io/media/games/6cd/6cd653e0aaef5ff8bbd295bf4bcb12eb.jpg"
+    },
+    {
+      "id": 411,
+      "name": "cooperative",
+      "slug": "cooperative",
+      "language": "eng",
+      "games_count": 4110,
+      "image_background": "https://media.rawg.io/media/games/f87/f87457e8347484033cb34cde6101d08d.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Online Co-Op",
+      "slug": "online-co-op",
+      "language": "eng",
+      "games_count": 4456,
+      "image_background": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Exploration",
+      "slug": "exploration",
+      "language": "eng",
+      "games_count": 19549,
+      "image_background": "https://media.rawg.io/media/games/9aa/9aa42d16d425fa6f179fc9dc2f763647.jpg"
+    },
+    {
+      "id": 189,
+      "name": "Female Protagonist",
+      "slug": "female-protagonist",
+      "language": "eng",
+      "games_count": 10624,
+      "image_background": "https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg"
+    },
+    {
+      "id": 198,
+      "name": "Split Screen",
+      "slug": "split-screen",
+      "language": "eng",
+      "games_count": 5633,
+      "image_background": "https://media.rawg.io/media/games/74d/74dafeb9a442b87b9dd4a1d4a2faa37b.jpg"
+    },
+    {
+      "id": 75,
+      "name": "Local Co-Op",
+      "slug": "local-co-op",
+      "language": "eng",
+      "games_count": 4983,
+      "image_background": "https://media.rawg.io/media/games/9cc/9cc11e2e81403186c7fa9c00c143d6e4.jpg"
+    },
+    {
+      "id": 97,
+      "name": "Action RPG",
+      "slug": "action-rpg",
+      "language": "eng",
+      "games_count": 5782,
+      "image_background": "https://media.rawg.io/media/games/d82/d82990b9c67ba0d2d09d4e6fa88885a7.jpg"
+    },
+    {
+      "id": 69,
+      "name": "Action-Adventure",
+      "slug": "action-adventure",
+      "language": "eng",
+      "games_count": 13644,
+      "image_background": "https://media.rawg.io/media/games/c50/c5085506fe4b5e20fc7aa5ace842c20b.jpg"
+    },
+    {
+      "id": 82,
+      "name": "Magic",
+      "slug": "magic",
+      "language": "eng",
+      "games_count": 8158,
+      "image_background": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+    },
+    {
+      "id": 406,
+      "name": "Story",
+      "slug": "story",
+      "language": "eng",
+      "games_count": 11229,
+      "image_background": "https://media.rawg.io/media/games/74b/74b239f6ef0216a2f66e652d54abb2e6.jpg"
+    },
+    {
+      "id": 40937,
+      "name": "Steam Trading Cards",
+      "slug": "steam-trading-cards-2",
+      "language": "eng",
+      "games_count": 430,
+      "image_background": "https://media.rawg.io/media/games/5ec/5ecac5cb026ec26a56efcc546364e348.jpg"
+    },
+    {
+      "id": 413,
+      "name": "online",
+      "slug": "online",
+      "language": "eng",
+      "games_count": 6520,
+      "image_background": "https://media.rawg.io/media/games/d51/d51ada3b94bfd617bf91d4344ab81ce9.jpg"
+    },
+    {
+      "id": 229,
+      "name": "3D Platformer",
+      "slug": "3d-platformer",
+      "language": "eng",
+      "games_count": 8796,
+      "image_background": "https://media.rawg.io/media/games/780/7804a1ce365e2c30d51007b910b14acf.jpg"
+    },
+    {
+      "id": 808,
+      "name": "character",
+      "slug": "character",
+      "language": "eng",
+      "games_count": 8774,
+      "image_background": "https://media.rawg.io/media/games/827/8276bc29cdc27752e27802b94aea255e.jpg"
+    },
+    {
+      "id": 5816,
+      "name": "console",
+      "slug": "console",
+      "language": "eng",
+      "games_count": 1387,
+      "image_background": "https://media.rawg.io/media/games/4fe/4feffcec6315c5f5a96442a8444431ca.jpg"
+    },
+    {
+      "id": 572,
+      "name": "Emotional",
+      "slug": "emotional",
+      "language": "eng",
+      "games_count": 1856,
+      "image_background": "https://media.rawg.io/media/games/473/473bd9a5e9522629d6cb28b701fb836a.jpg"
+    },
+    {
+      "id": 4565,
+      "name": "offline",
+      "slug": "offline",
+      "language": "eng",
+      "games_count": 1052,
+      "image_background": "https://media.rawg.io/media/games/df4/df415b18835f91a1b4db1da294996ee5.jpg"
+    },
+    {
+      "id": 45201,
+      "name": "Remote Play Together",
+      "slug": "remote-play-together",
+      "language": "eng",
+      "games_count": 1921,
+      "image_background": "https://media.rawg.io/media/games/2a5/2a5072e5b28e1653a10e4f931f1991af.jpg"
+    },
+    {
+      "id": 46112,
+      "name": "Shared/Split Screen Co-op",
+      "slug": "sharedsplit-screen-co-op",
+      "language": "eng",
+      "games_count": 1242,
+      "image_background": "https://media.rawg.io/media/screenshots/cc0/cc064ab715ba4195ac6d26250218e307.jpg"
+    },
+    {
+      "id": 59643,
+      "name": "Протагонистка",
+      "slug": "protagonistka",
+      "language": "eng",
+      "games_count": 3093,
+      "image_background": "https://media.rawg.io/media/games/673/673f27be4c5dbf37ce3ed0ed5ddf9d8d.jpg"
+    },
+    {
+      "id": 1709,
+      "name": "work",
+      "slug": "work",
+      "language": "eng",
+      "games_count": 9166,
+      "image_background": "https://media.rawg.io/media/screenshots/c20/c20b09187629ea6b47d8b3e9132bf839.jpeg"
+    },
+    {
+      "id": 163,
+      "name": "Co-op Campaign",
+      "slug": "co-op-campaign",
+      "language": "eng",
+      "games_count": 286,
+      "image_background": "https://media.rawg.io/media/games/38f/38fb7bb56f3fbb78444a7e7cf9aaeb8d.jpg"
+    },
+    {
+      "id": 1652,
+      "name": "night",
+      "slug": "night",
+      "language": "eng",
+      "games_count": 4435,
+      "image_background": "https://media.rawg.io/media/games/4a5/4a5ce21f529cf8fd4670b4c3188b25df.jpg"
+    },
+    {
+      "id": 2232,
+      "name": "journey",
+      "slug": "journey",
+      "language": "eng",
+      "games_count": 1926,
+      "image_background": "https://media.rawg.io/media/games/c32/c3214fdd63f48b9ad2b5d87bfdec0885.jpg"
+    },
+    {
+      "id": 569,
+      "name": "Minigames",
+      "slug": "minigames",
+      "language": "eng",
+      "games_count": 5523,
+      "image_background": "https://media.rawg.io/media/screenshots/036/036ca74bdb95d462a2a48e419e37bd23.jpg"
+    },
+    {
+      "id": 892,
+      "name": "love",
+      "slug": "love",
+      "language": "eng",
+      "games_count": 6325,
+      "image_background": "https://media.rawg.io/media/games/dec/decdfa154a72265cd2914097666a99d5.jpg"
+    },
+    {
+      "id": 3397,
+      "name": "light",
+      "slug": "light",
+      "language": "eng",
+      "games_count": 1789,
+      "image_background": "https://media.rawg.io/media/games/f2a/f2a2fc10c284cb7d6c3bff1d4e01da51.jpg"
+    },
+    {
+      "id": 316,
+      "name": "Mining",
+      "slug": "mining",
+      "language": "eng",
+      "games_count": 919,
+      "image_background": "https://media.rawg.io/media/screenshots/8f8/8f82824a354f0c55542f10f17260f1aa.jpg"
+    },
+    {
+      "id": 3626,
+      "name": "treasure",
+      "slug": "treasure",
+      "language": "eng",
+      "games_count": 1858,
+      "image_background": "https://media.rawg.io/media/screenshots/83d/83d046e6efe7a6d4a31a88177e2605b5.jpg"
+    },
+    {
+      "id": 688,
+      "name": "relationship",
+      "slug": "relationship",
+      "language": "eng",
+      "games_count": 1008,
+      "image_background": "https://media.rawg.io/media/screenshots/7ea/7ea528219d53d8987eac8d45292fb907_5OluUrF.jpg"
+    },
+    {
+      "id": 2774,
+      "name": "learn",
+      "slug": "learn",
+      "language": "eng",
+      "games_count": 1278,
+      "image_background": "https://media.rawg.io/media/screenshots/299/29904b87229ea59a1a4186833e4028dd.jpg"
+    },
+    {
+      "id": 4451,
+      "name": "obstacles",
+      "slug": "obstacles",
+      "language": "eng",
+      "games_count": 2178,
+      "image_background": "https://media.rawg.io/media/screenshots/a5b/a5b1a266ca43d23cd6c800ca561e4045.jpg"
+    },
+    {
+      "id": 2353,
+      "name": "delivery",
+      "slug": "delivery",
+      "language": "eng",
+      "games_count": 291,
+      "image_background": "https://media.rawg.io/media/screenshots/f7a/f7af8c0fc22975f59935f398b615e359.jpg"
+    }
+  ],
+  "publishers": [
+    {
+      "id": 354,
+      "name": "Electronic Arts",
+      "slug": "electronic-arts",
+      "games_count": 1310,
+      "image_background": "https://media.rawg.io/media/games/dc0/dc0926d3f84ffbcc00968fe8a6f0aed3.jpg"
+    }
+  ],
+  "esrb_rating": {
+    "id": 2,
+    "name": "Everyone 10+",
+    "slug": "everyone-10-plus"
+  },
+  "clip": null,
+  "description_raw": "Bring your favorite co-op partner and together step into the shoes of May and Cody. As the couple is going through a divorce, through unknown means their minds are transported into two dolls which their daughter, Rose, made to represent them. Now they must reluctantly find a way to get back into their bodies, a quest which takes them through the most wild, unexpected and fantastical journey imaginable.\r\n\r\nIt Takes Two further builds on Hazelight’s proven track record of making rich and engaging co-op experiences. While developing It Takes Two it has been the team’s number one priority to truly merge story and gameplay. Allowing both to influence each other guarantees a game that is as engaging to play as it is compelling to experience."
+}

@@ -16,6 +16,7 @@ import { fetching } from '../../slices/uiSlice'
 import { addActiveGame } from '../../slices/activeGameSlice'
 import { addSearchGames } from '../../slices/searchSlice'
 import SearchItem from './SearchItem'
+import routesPath from '../../routesPath'
 
 // eslint-disable-next-line max-len
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type, functional/prefer-immutable-types
@@ -32,13 +33,24 @@ const SearchPage = () => {
   useEffect(() => {
     const requestData = async () => {
       dispatch(fetching(true))
-      const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
-      const response = await axios.get(`https://api.rawg.io/api/games?key=${key}&page_size=${pageSize}&page=${page}&search=${searchWord}`)
-      dispatch(addSearchGames(response.data.results))
-      dispatch(addGamesCount(response.data.count))
-      dispatch(fetching(false))
-      dispatch(addActiveGame(null))
-      console.log(searchGamesStore)
+      // const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
+      try {
+      // const response = await axios.get(`https://api.rawg.io/api/games?key=${key}&page_size=${pageSize}&page=${page}&search=${searchWord}`)
+        const response = await axios.get(routesPath.searchGameListApiPath(
+          pageSize,
+          page,
+          searchWord
+        ))
+
+        dispatch(addSearchGames(response.data.results))
+        dispatch(addGamesCount(response.data.count))
+        dispatch(fetching(false))
+        dispatch(addActiveGame(null))
+        console.log(searchGamesStore)
+      } catch (error) {
+        console.error(error)
+        throw error
+      }
     }
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     requestData()

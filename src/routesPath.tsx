@@ -9,11 +9,19 @@ const apiPath = 'https://api.rawg.io/api'
 
 const routes = {
   searchGameApiPath: (searchWord: string): string => `${apiPath}/games${key}&search=${searchWord}`,
+
+  searchGameListApiPath: (
+    pageSize: number,
+    page: number,
+    searchWord: string
+  ): string => `${apiPath}/games${key}&page_size=${pageSize}&page=${page}&search=${searchWord}`,
+
   detailsOfGameApiPath: (gameId: string): string => `${apiPath}/games/${gameId}${key}`,
   screenshotsOfGameApiPath: (gameId: string): string => `${apiPath}/games/${gameId}/screenshots${key}`,
   genresApiPath: (): string => `${apiPath}/genres${key}`,
   platformsApiPath: (): string => `${apiPath}/platforms${key}`,
   publishersApiPath: (): string => `${apiPath}/publishers${key}`,
+
   gameListApiPath: (
     pageSize: number,
     page: number,
@@ -54,4 +62,5 @@ const routes = {
   notFoundPagePath: () => '*'
 }
 
+export { key, apiPath }
 export default routes
