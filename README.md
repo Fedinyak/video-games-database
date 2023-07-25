@@ -1,3 +1,5 @@
+[![Node CI](https://github.com/Fedinyak/video-games-database/workflows/Node%20CI/badge.svg)](https://github.com/Fedinyak/video-games-database/actions)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
