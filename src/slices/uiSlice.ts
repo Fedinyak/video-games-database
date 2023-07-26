@@ -11,7 +11,6 @@ export interface uiState {
 
 const initialState: uiState = {
   isFetching: false
-  // isFetching: true
 }
 
 const uiSlice = createSlice({
@@ -20,7 +19,6 @@ const uiSlice = createSlice({
   reducers: {
     fetching: (state, action: PayloadAction<boolean>) => {
       state.isFetching = action.payload
-      // state.isFetching = !state.isFetching
     }
   }
 })

@@ -13,12 +13,9 @@ const SearchItem = ({ name, id, background_image: image, rating }: Readonly<sear
       <Box
         sx={{
           display: 'flex',
-          // flexDirection: { xs: 'column' },
           flexDirection: { xs: 'row' },
           alignItems: 'center',
-          // bgcolor: '#474747',
           overflow: 'hidden',
-          // borderRadius: '12px,
           boxShadow: 1,
           fontWeight: 'bold'
         }}
@@ -28,19 +25,16 @@ const SearchItem = ({ name, id, background_image: image, rating }: Readonly<sear
           sx={{
             objectFit: 'cover',
             borderRadius: '50%',
-            // height: '100%',
             height: 75,
             width: 75
           }}
           alt={name}
           src={image}
         />
-
         <Box ml={2} mr={3}>
           <Typography
             component="h3"
             sx={{
-              // textTransform: 'capitalize',
               color: 'white',
               fontWeight: 'bolder'
             }}

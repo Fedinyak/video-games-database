@@ -1,8 +1,4 @@
-import {
-  Grid,
-  //  Stack,
-  Typography
-} from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { Container } from '@mui/system'
 import React from 'react'
 import LanguageSwitchBtn from './LanguageSwitchBtn'
@@ -14,16 +10,6 @@ const Header = (): JSX.Element => (
 
   <Container>
     <header>
-      {/* <Stack
-      direction="row"
-      justifyContent="space-between"
-      useFlexGap
-      flexWrap="wrap"
-      alignItems="center"
-      spacing={2}
-      pt={2}
-      pb={2}
-    > */}
       <Grid
         alignItems="center"
         container
@@ -62,7 +48,6 @@ const Header = (): JSX.Element => (
           xs={12}
           pt={2}
         >
-          {/* </Stack> */}
           <Search />
         </Grid>
       </Grid>

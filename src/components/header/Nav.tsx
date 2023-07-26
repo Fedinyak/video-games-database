@@ -5,17 +5,10 @@
 /* eslint-disable functional/no-expression-statements */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import { useTranslation } from 'react-i18next'
-// import Link from '@mui/material/Link'
-// import { MiuLink as Link } from '@mui/material'
 import { Link, matchPath, useLocation } from 'react-router-dom'
-// import { Box } from '@mui/system'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import routesPath from '../../routesPath'
-// import { Stack } from '@mui/system'
-// import { MiuLink as Link } from '@mui/material/Link'
-// import i18next from 'i18next'
-// const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
 
 const useRouteMatch = (patterns: readonly string[]) => {
   const { pathname } = useLocation()
@@ -45,53 +38,6 @@ const Nav = (): JSX.Element => {
       <Tab label={t('nav.catalog')} value={routesPath.catalogPagePath()} to={routesPath.catalogPagePath()} component={Link} />
     </Tabs>
   )
-
-  // return (
-  //   <nav>
-  //     {/* <Stack
-  //       direction="row"
-  //       spacing={2}
-  //       sx={{
-  //         color: 'white',
-  //         fontWeight: 'bolder',
-  //         fontSize: 40
-  //       }}
-  //     > */}
-  //     <Box
-  //       sx={{
-  //         typography: 'body1',
-  //         '& > :not(style) ~ :not(style)': {
-  //           ml: 2
-  //         }
-  //       }}
-  //       onClick={(event: React.SyntheticEvent) => { event.preventDefault() }}
-  //     >
-  //       <Link component={RouterLink} to="/" underline="hover">
-  //         {t('nav.main')}
-  //       </Link>
-  //       <Link component={RouterLink} to="/catalog" underline="hover">
-  //         {t('nav.catalog')}
-  //       </Link>
-  //     </Box>
-  //   </nav>
-  // )
 }
 
 export default Nav
-//  <Box
-//       sx={{
-//         display: 'flex',
-//         flexDirection: 'row'
-//       }}
-//     >
-//       <nav>
-//         <ul>
-//           <li>
-//             <Link to="/">{t('nav.main')}</Link>
-//           </li>
-//           <li>
-//             <Link to="/catalog">{t('nav.catalog')}</Link>
-//           </li>
-//         </ul>
-//       </nav>
-//     </Box>

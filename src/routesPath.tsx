@@ -31,7 +31,6 @@ const routes = {
     genres: string = ''
   ): string => {
     const resultPath: string[] = [`${apiPath}/games${key}&page_size=${pageSize}&page=${page}&ordering=${orderBy}`]
-    // const optionalFilterListKey = ['platforms', 'publishers', 'genres']
     const optionalFilterList = {
       platforms,
       publishers,
@@ -44,17 +43,9 @@ const routes = {
         resultPath.push(`&${filterKey}=${value}`)
       }
     }
-
-    // optionalFilterList.forEach((item, index): void => {
-    //   if (item !== '') {
-    //     result.push(`&${optionalFilterList[index]}=${item}`)
-    //   }
-    // })
-    // &platforms=${platforms}
-    // &publishers=${publishers}
-    // &genres=${genres}
     return resultPath.join('')
   },
+
   mainPagePath: () => '/',
   catalogPagePath: () => '/catalog',
   gamePagePath: (id: string): string => `/catalog/${id}`,

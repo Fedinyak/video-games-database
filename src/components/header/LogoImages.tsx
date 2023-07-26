@@ -3,7 +3,6 @@ import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 import { useAppSelector } from '../../hooks/reduxHooks'
 
-// searchGamesStore.map((item) => item.name)
 const LogoImages = (): JSX.Element => {
   const searchGamesStore = useAppSelector((state) => state.searchGames.items)
   return (
@@ -12,24 +11,17 @@ const LogoImages = (): JSX.Element => {
       position: 'absolute',
       width: '100%',
       height: { xs: '10%', xl: '7%' },
-      // height: '10%',
       left: 0,
       top: 0,
       backgroundColor: 'rgba(0, 0, 0, 0.2)'
-      // userSelect: 'none'
-      // zIndex: 1
     }}
     >
-
       <Box
         sx={{
-
           overflowY: 'hidden',
           overflowX: 'hidden',
-          // overflow: 'hidden'
           transform: 'rotate(-3deg)',
           marginTop: '-10%'
-          // zIndex: 1
         }}
       >
         <ImageList variant="masonry" cols={6} gap={0}>

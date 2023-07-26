@@ -19,7 +19,6 @@ const MainItem = ({ name, id, image }: propsType) => (
       sx={{
         display: 'flex',
         flexDirection: { xs: 'column' },
-        // alignItems: 'center',
         overflow: 'hidden',
         borderRadius: '6px',
         boxShadow: 1,
@@ -28,7 +27,6 @@ const MainItem = ({ name, id, image }: propsType) => (
       }}
     >
       <Link to={routesPath.gamePagePath(id.toString())} style={{ textDecoration: 'none', color: 'white' }}>
-
         <Box
           component="img"
           sx={{
@@ -42,14 +40,12 @@ const MainItem = ({ name, id, image }: propsType) => (
         <Box
           component="div"
           sx={{
-            // height: '10%',
             width: '100%',
             backgroundColor: 'rgba(0, 0, 0, 0.4)',
             position: 'absolute',
             bottom: '0'
           }}
         >
-
           <Typography
             component="h4"
             mt={2}

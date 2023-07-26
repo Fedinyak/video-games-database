@@ -17,8 +17,6 @@ const CatalogItem = (props: propsType): JSX.Element => {
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column' },
-          // alignItems: 'center',
-          // bgcolor: '#474747',
           overflow: 'hidden',
           borderRadius: '6px',
           boxShadow: 1,
@@ -40,7 +38,6 @@ const CatalogItem = (props: propsType): JSX.Element => {
           <Box
             component="div"
             sx={{
-              // height: '10%',
               width: '100%',
               backgroundColor: 'rgba(0, 0, 0, 0.4)',
               position: 'absolute',

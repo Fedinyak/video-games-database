@@ -46,8 +46,7 @@ const searchGamesSlice = createSlice({
     }
   }
 })
-// Слайс генерирует действия, которые экспортируются отдельно
-// Действия генерируются автоматически из имен ключей редьюсеров
+
 export const {
   addSearchGames,
   addSearchGamesCount,
@@ -55,5 +54,4 @@ export const {
   addSearchWord
 } = searchGamesSlice.actions
 
-// По умолчанию экспортируется редьюсер, сгенерированный слайсом
 export default searchGamesSlice.reducer

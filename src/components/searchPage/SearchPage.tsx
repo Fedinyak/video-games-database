@@ -23,7 +23,6 @@ import routesPath from '../../routesPath'
 const SearchPage = () => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
-  // const gamesStore = useAppSelector((state) => state.games.items)
   const searchGamesStore = useAppSelector((state) => state.searchGames.items)
   const searchWord = useAppSelector((state) => state.searchGames.searchWords)
   const pageSize = useAppSelector((state) => state.games.pageSize)
@@ -33,9 +32,7 @@ const SearchPage = () => {
   useEffect(() => {
     const requestData = async () => {
       dispatch(fetching(true))
-      // const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
       try {
-      // const response = await axios.get(`https://api.rawg.io/api/games?key=${key}&page_size=${pageSize}&page=${page}&search=${searchWord}`)
         const response = await axios.get(routesPath.searchGameListApiPath(
           pageSize,
           page,
@@ -46,7 +43,6 @@ const SearchPage = () => {
         dispatch(addGamesCount(response.data.count))
         dispatch(fetching(false))
         dispatch(addActiveGame(null))
-        console.log(searchGamesStore)
       } catch (error) {
         console.error(error)
         throw error

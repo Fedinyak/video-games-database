@@ -6,23 +6,15 @@
 import { useTranslation } from 'react-i18next'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-// import { useState } from 'react'
 
 const LanguageSwitchBtn = (): JSX.Element => {
   const { i18n } = useTranslation()
   const getLang = i18n.language
-  // const [language, setLanguage] = useState(getLang)
-
-  // const handleLangSwitch = (e: any) => {
-  //   const { lang } = e.target.dataset
-  //   i18n.changeLanguage(lang)
-  // }
 
   const handleChange = (
     event: React.MouseEvent<HTMLElement>,
     newLanguage: string
   ) => {
-    // setLanguage(newLanguage)
     i18n.changeLanguage(newLanguage)
   }
 

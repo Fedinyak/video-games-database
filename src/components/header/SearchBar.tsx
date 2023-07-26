@@ -30,11 +30,7 @@ const Search = () => {
 
   useEffect(() => {
     const requestData = async () => {
-      // const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
-      const response = await axios.get(
-        routesPath.searchGameApiPath(searchWord)
-        // `https://api.rawg.io/api/games?key=${key}&search=${searchWord}`
-      )
+      const response = await axios.get(routesPath.searchGameApiPath(searchWord))
       dispatch(addSearchGames(response.data.results))
     }
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
@@ -42,7 +38,6 @@ const Search = () => {
   }, [searchWord])
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value, 'event--------------')
     dispatch(addSearchWord(event.target.value))
     setInputValue(event.target.value)
   }
@@ -54,19 +49,15 @@ const Search = () => {
     )
     console.log(getSearchGameId === undefined, 'getSearchGameId------')
     if (getSearchGameId === undefined) {
-      // alert('---undefined')
       navigate(routesPath.searchPagePath())
     } else {
       // eslint-disable-next-line functional/no-conditional-statements
       const requestData = async () => {
         dispatch(fetching(true))
-        // const key = 'e1dae6cdd05a459f82b1cf12bbea83f0'
         const responseActiveGame = await axios.get(
-          // `https://api.rawg.io/api/games/${getSearchGameId.id}?key=${key}`
           routesPath.detailsOfGameApiPath(`${getSearchGameId.id}`)
         )
         const responseScreenshots = await axios.get(
-          // `https://api.rawg.io/api/games/${getSearchGameId.id}/screenshots?key=${key}`
           routesPath.screenshotsOfGameApiPath(`${getSearchGameId.id}`)
         )
         dispatch(
@@ -102,11 +93,7 @@ const Search = () => {
     <form onSubmit={handleSubmit}>
       <Stack spacing={1} mb={2} direction="row" justifyContent="space-between">
         <Autocomplete
-          sx={{
-            width: '100%'
-            // backgroundColor: 'green',
-            // color: 'green'
-          }}
+          sx={{ width: '100%' }}
           freeSolo
           id="free-solo-2-demo"
           disableClearable
@@ -115,38 +102,18 @@ const Search = () => {
           }}
           options={searchGamesStore.map((item) => item.name)}
           value={inputValue}
-          // onClick={handleSubmit}
-          // renderOption={(props, option) => (
-          //   <span
-          //     {...props}
-          //     style={{
-          //       backgroundColor: {
-          //         '&:hover': {
-          //           backgroundColor: 'pink !important'
-          //         }
-          //       }
-          //     }}
-          //   >
-          //     {option}
-          //   </span>
-          // )}
           renderInput={(params) => (
             <TextField
               {...params}
               onChange={handleChange}
-              // onClick={handleSubmit}
-              // filterOptions={top100Films.map((option) => option.title)}
               label={t('nav.searchBar.label')}
               InputProps={{
                 ...params.InputProps,
                 type: 'search'
-                // onSubmit: handleSubmit
-                // type: 'submit'
               }}
             />
           )}
         />
-        {/* <input type="submit" value={t('nav.searchBar.submitButton')} /> */}
         <Button
           type="submit"
           variant="contained"
